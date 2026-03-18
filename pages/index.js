@@ -6,110 +6,137 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Vael Growth Labs | Premium Real Estate Marketing</title>
-        <meta name="description" content="Premium real estate marketing agency helping developers generate qualified buyer leads in Karnataka." />
+        <title>Vael Growth Labs</title>
       </Head>
 
       <Header />
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section style={{
-        background: "linear-gradient(180deg, #000000, #002855)",
-        color: "white",
-        padding: "120px 20px",
-        textAlign: "center"
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "0 10%",
+        background: "radial-gradient(circle at top, #0a0f2c, #000)"
       }}>
-        <h1 style={{fontSize: "48px", marginBottom: "20px"}}>
-          Transform Your Real Estate Marketing
-        </h1>
+        
+        {/* LEFT */}
+        <div style={{maxWidth: "600px", color: "white"}}>
+          <h1 style={{
+            fontSize: "60px",
+            lineHeight: "1.1",
+            marginBottom: "20px"
+          }}>
+            Transform Your <span style={{color:"#C79F1F"}}>Real Estate</span> Marketing
+          </h1>
 
-        <p style={{fontSize: "20px", marginBottom: "30px"}}>
-          Generate serious buyer leads for your projects
-        </p>
+          <p style={{fontSize: "18px", marginBottom: "30px", color:"#ccc"}}>
+            Generate serious buyer leads for your projects with data-driven systems.
+          </p>
 
-        <a href="https://wa.me/918951743843?text=Hello%20Vael,%20I%20am%20interested%20in%20your%20services">
-          <button className="btn-primary">Get Free Growth Audit</button>
-        </a>
+          <a href="https://wa.me/918951743843?text=Hello%20Vael,%20I%20am%20interested">
+            <button className="btn-primary">Get Free Growth Audit</button>
+          </a>
+        </div>
+
+        {/* RIGHT (3D SPACE PLACEHOLDER) */}
+        <div style={{
+          width: "400px",
+          height: "400px",
+          background: "linear-gradient(145deg,#111,#1a1a1a)",
+          borderRadius: "20px",
+          boxShadow: "0 0 40px rgba(199,159,31,0.2)"
+        }}>
+          <p style={{color:"white", textAlign:"center", paddingTop:"180px"}}>
+            3D Scene Coming
+          </p>
+        </div>
+
       </section>
 
-      {/* VALUE PROPS */}
-      <section style={{padding: "80px 20px", background: "#0a0a0a", color: "white"}}>
-        <h2 style={{textAlign: "center", marginBottom: "50px"}}>Why Vael Growth Labs</h2>
-
-        <div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap"}}>
-          
-          <div style={{maxWidth: "250px", margin: "20px"}}>
-            <h3>Qualified Buyer Leads</h3>
-            <p>We attract serious buyers ready to invest in your projects.</p>
-          </div>
-
-          <div style={{maxWidth: "250px", margin: "20px"}}>
-            <h3>Data-Driven Strategy</h3>
-            <p>Every campaign is optimized using real performance data.</p>
-          </div>
-
-          <div style={{maxWidth: "250px", margin: "20px"}}>
-            <h3>Automated Follow-Up</h3>
-            <p>We ensure no lead is lost with automation systems.</p>
-          </div>
-
-        </div>
+      {/* TRUST STRIP */}
+      <section style={{
+        background:"#000",
+        color:"#aaa",
+        padding:"40px",
+        textAlign:"center"
+      }}>
+        Trusted by Real Estate Developers Across Karnataka
       </section>
 
       {/* SERVICES */}
-      <section style={{padding: "80px 20px", background: "#000", color: "white"}}>
-        <h2 style={{textAlign: "center", marginBottom: "50px"}}>Our Services</h2>
+      <section style={{
+        padding:"100px 10%",
+        background:"#050505",
+        color:"white"
+      }}>
+        <h2 style={{textAlign:"center", marginBottom:"60px"}}>
+          Our Expertise
+        </h2>
 
-        <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center"}}>
+        <div style={{
+          display:"grid",
+          gridTemplateColumns:"repeat(auto-fit, minmax(250px,1fr))",
+          gap:"30px"
+        }}>
 
-          {["Lead Generation", "Landing Pages", "CRM Automation", "Content Marketing"].map((service, i) => (
+          {[
+            "Lead Generation",
+            "Conversion Funnels",
+            "CRM Automation",
+            "Brand Positioning"
+          ].map((item, i) => (
             <div key={i} style={{
-              background: "#111",
-              padding: "30px",
-              margin: "15px",
-              borderRadius: "10px",
-              width: "250px"
+              padding:"30px",
+              background:"#0d0d0d",
+              borderRadius:"12px",
+              border:"1px solid rgba(255,255,255,0.05)"
             }}>
-              <h3>{service}</h3>
-              <p>High-performance solutions designed for real estate growth.</p>
+              <h3>{item}</h3>
+              <p style={{color:"#aaa"}}>
+                High-performance systems designed to scale your projects.
+              </p>
             </div>
           ))}
 
         </div>
       </section>
 
-      {/* LEAD MAGNET */}
+      {/* CTA */}
       <section style={{
-        padding: "100px 20px",
-        background: "linear-gradient(180deg, #002855, #000)",
-        color: "white",
-        textAlign: "center"
+        padding:"120px 20px",
+        textAlign:"center",
+        background:"linear-gradient(180deg,#000,#002855)",
+        color:"white"
       }}>
-        <h2>Ready for Better Leads?</h2>
+        <h2 style={{fontSize:"36px"}}>
+          Ready for Better Leads?
+        </h2>
 
-        <p>Get your free Real Estate Growth Audit</p>
+        <p style={{color:"#ccc"}}>
+          Get your free real estate growth audit today
+        </p>
 
-        <form style={{marginTop: "20px"}}>
-          <input placeholder="Your Name" required style={{padding: "10px", margin: "10px"}} />
-          <input placeholder="Email" required style={{padding: "10px", margin: "10px"}} />
-          <br/>
-          <button className="btn-primary">Download Audit</button>
-        </form>
+        <a href="https://wa.me/918951743843?text=Hello%20Vael,%20I%20want%20audit">
+          <button className="btn-primary" style={{marginTop:"20px"}}>
+            Get Audit
+          </button>
+        </a>
       </section>
 
       {/* WHATSAPP FLOAT */}
-      <a href="https://wa.me/918951743843?text=Hello%20Vael,%20I%20am%20interested%20in%20your%20services"
-         style={{
-           position: "fixed",
-           bottom: "20px",
-           right: "20px",
-           background: "#25D366",
-           padding: "15px",
-           borderRadius: "50%",
-           color: "white",
-           fontSize: "20px"
-         }}>
-         💬
+      <a href="https://wa.me/918951743843?text=Hello"
+        style={{
+          position:"fixed",
+          bottom:"20px",
+          right:"20px",
+          background:"#25D366",
+          padding:"16px",
+          borderRadius:"50%",
+          color:"white"
+        }}>
+        💬
       </a>
 
       <Footer />
