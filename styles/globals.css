@@ -19,9 +19,11 @@ h1, h2, h3 {
 }
 
 .btn-primary {
-  background: var(--vael-gold);
-  color: white;
-  padding: 12px 20px;
+  background: linear-gradient(45deg, #C79F1F, #FFD700);
+  color: black;
+  padding: 14px 28px;
   border: none;
+  border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
 }
