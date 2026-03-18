@@ -1,0 +1,27 @@
+:root {
+  --vael-blue: #002855;
+  --vael-gold: #C79F1F;
+  --white: #ffffff;
+
+  --heading-font: 'Poppins', sans-serif;
+  --body-font: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  background: var(--white);
+  color: var(--vael-blue);
+}
+
+h1, h2, h3 {
+  font-family: var(--heading-font);
+}
+
+.btn-primary {
+  background: var(--vael-gold);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
