@@ -1,17 +1,24 @@
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import dynamic from 'next/dynamic';
+
+// Load 3D only on client (prevents errors)
+const Hero3D = dynamic(() => import('../components/Hero3D'), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Vael Growth Labs</title>
+        <title>Vael Growth Labs | Premium Real Estate Marketing</title>
+        <meta name="description" content="Generate qualified real estate leads in Karnataka with Vael Growth Labs." />
       </Head>
 
       <Header />
 
-      {/* HERO */}
+      {/* HERO SECTION */}
       <section style={{
         minHeight: "100vh",
         display: "flex",
@@ -20,55 +27,98 @@ export default function Home() {
         padding: "0 10%",
         background: "radial-gradient(circle at top, #0a0f2c, #000)"
       }}>
-        
-        {/* LEFT */}
+
+        {/* LEFT CONTENT */}
         <div style={{maxWidth: "600px", color: "white"}}>
           <h1 style={{
-            fontSize: "60px",
+            fontSize: "58px",
             lineHeight: "1.1",
             marginBottom: "20px"
           }}>
             Transform Your <span style={{color:"#C79F1F"}}>Real Estate</span> Marketing
           </h1>
 
-          <p style={{fontSize: "18px", marginBottom: "30px", color:"#ccc"}}>
-            Generate serious buyer leads for your projects with data-driven systems.
+          <p style={{
+            fontSize: "18px",
+            marginBottom: "30px",
+            color:"#ccc"
+          }}>
+            Generate serious buyer leads for your projects using data-driven systems & automation.
           </p>
 
-          <a href="https://wa.me/918951743843?text=Hello%20Vael,%20I%20am%20interested">
-            <button className="btn-primary">Get Free Growth Audit</button>
+          <a href="https://wa.me/918951743843?text=Hello%20Vael,%20I%20am%20interested%20in%20your%20services">
+            <button className="btn-primary">
+              Get Free Growth Audit
+            </button>
           </a>
         </div>
 
-        {/* RIGHT (3D SPACE PLACEHOLDER) */}
+        {/* RIGHT 3D */}
         <div style={{
-          width: "400px",
-          height: "400px",
-          background: "linear-gradient(145deg,#111,#1a1a1a)",
+          width: "420px",
+          height: "420px",
           borderRadius: "20px",
-          boxShadow: "0 0 40px rgba(199,159,31,0.2)"
+          overflow: "hidden",
+          boxShadow: "0 0 60px rgba(199,159,31,0.25)"
         }}>
-          <p style={{color:"white", textAlign:"center", paddingTop:"180px"}}>
-            3D Scene Coming
-          </p>
+          <Hero3D />
         </div>
 
       </section>
 
-      {/* TRUST STRIP */}
+      {/* TRUST BAR */}
       <section style={{
         background:"#000",
-        color:"#aaa",
+        color:"#888",
         padding:"40px",
-        textAlign:"center"
+        textAlign:"center",
+        fontSize:"14px",
+        letterSpacing:"1px"
       }}>
-        Trusted by Real Estate Developers Across Karnataka
+        TRUSTED BY REAL ESTATE DEVELOPERS ACROSS KARNATAKA
+      </section>
+
+      {/* VALUE SECTION */}
+      <section style={{
+        padding:"100px 10%",
+        background:"#050505",
+        color:"white"
+      }}>
+        <h2 style={{
+          textAlign:"center",
+          marginBottom:"60px"
+        }}>
+          Why Vael Growth Labs
+        </h2>
+
+        <div style={{
+          display:"grid",
+          gridTemplateColumns:"repeat(auto-fit, minmax(250px,1fr))",
+          gap:"30px"
+        }}>
+
+          <div style={{padding:"30px", background:"#0d0d0d", borderRadius:"10px"}}>
+            <h3>Qualified Buyer Leads</h3>
+            <p style={{color:"#aaa"}}>We bring serious buyers, not just inquiries.</p>
+          </div>
+
+          <div style={{padding:"30px", background:"#0d0d0d", borderRadius:"10px"}}>
+            <h3>Data-Driven Strategy</h3>
+            <p style={{color:"#aaa"}}>Every decision backed by performance data.</p>
+          </div>
+
+          <div style={{padding:"30px", background:"#0d0d0d", borderRadius:"10px"}}>
+            <h3>Automated Follow-Ups</h3>
+            <p style={{color:"#aaa"}}>No lead is lost with smart automation.</p>
+          </div>
+
+        </div>
       </section>
 
       {/* SERVICES */}
       <section style={{
         padding:"100px 10%",
-        background:"#050505",
+        background:"#000",
         color:"white"
       }}>
         <h2 style={{textAlign:"center", marginBottom:"60px"}}>
@@ -80,26 +130,19 @@ export default function Home() {
           gridTemplateColumns:"repeat(auto-fit, minmax(250px,1fr))",
           gap:"30px"
         }}>
-
-          {[
-            "Lead Generation",
-            "Conversion Funnels",
-            "CRM Automation",
-            "Brand Positioning"
-          ].map((item, i) => (
+          {["Lead Generation", "Funnels", "CRM Automation", "Branding"].map((item, i) => (
             <div key={i} style={{
               padding:"30px",
-              background:"#0d0d0d",
+              background:"#111",
               borderRadius:"12px",
               border:"1px solid rgba(255,255,255,0.05)"
             }}>
               <h3>{item}</h3>
               <p style={{color:"#aaa"}}>
-                High-performance systems designed to scale your projects.
+                High-performance systems for real estate growth.
               </p>
             </div>
           ))}
-
         </div>
       </section>
 
@@ -115,10 +158,10 @@ export default function Home() {
         </h2>
 
         <p style={{color:"#ccc"}}>
-          Get your free real estate growth audit today
+          Get your free real estate growth audit
         </p>
 
-        <a href="https://wa.me/918951743843?text=Hello%20Vael,%20I%20want%20audit">
+        <a href="https://wa.me/918951743843?text=Hello%20Vael,%20I%20want%20a%20growth%20audit">
           <button className="btn-primary" style={{marginTop:"20px"}}>
             Get Audit
           </button>
@@ -134,7 +177,9 @@ export default function Home() {
           background:"#25D366",
           padding:"16px",
           borderRadius:"50%",
-          color:"white"
+          color:"white",
+          fontSize:"20px",
+          boxShadow:"0 0 10px rgba(0,0,0,0.3)"
         }}>
         💬
       </a>
